@@ -34,6 +34,13 @@ class HomeworkController extends Controller
      */
     public function store(Request $request)
     {
+        $validalt = $request->validate([
+            'assignment_title' => 'required|min:4',
+            'url' => 'required|min:8',
+            'feedback' => 'required|min:0|max:100',
+            'point' => 'required|numeric|min:1|max:5',
+        ]);
+
         $adatok = $request->only(['assignment_title', 'url', 'feedback', 'point']);
         $homework = new Homework();
         $homework->fill($adatok);
