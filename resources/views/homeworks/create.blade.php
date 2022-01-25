@@ -16,7 +16,7 @@
         </div>
         <div>
             Url:<br>
-            <input type="link" name="link">
+            <input type="text" name="link">
         </div>
         <div>
             Feedback:<br>
