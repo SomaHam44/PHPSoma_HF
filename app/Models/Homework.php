@@ -10,4 +10,12 @@ class Homework extends Model
     use HasFactory;
 
     protected $fillable = ['assignment_title', 'url','feedback','point'];
+
+    protected $visible = [
+        'id',
+        'assignment_title',
+        'url',
+        'feedback',
+        'point',
+    ];
 }
