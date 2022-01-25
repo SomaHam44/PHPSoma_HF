@@ -26,7 +26,7 @@
             Point:<br>
             <input type="number" name="point">
         </div>
-        <div>
+        <div> <br>
             <input type="submit" value="Create">
         </div>
     </form>

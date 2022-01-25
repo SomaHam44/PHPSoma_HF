@@ -53,6 +53,10 @@ class HomeworkController extends Controller
         return view ('show', ['homework' => $homework]);
     }
 
+    public function edit(Homework $homework)
+    {
+        return view('homeworks.edit', ['homework' => $homework]);
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -60,12 +64,12 @@ class HomeworkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Homework $homework)
     {
         $adatok = $request->only(['assignment_title', 'url', 'feedback', 'point']);
         $homework>fill($adatok);
         $homework->save();
-        return redirect()->route('show', $homework->id);
+        return redirect()->route('homeworks.index');
     }
 
     /**

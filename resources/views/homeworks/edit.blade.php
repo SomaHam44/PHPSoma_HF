@@ -12,10 +12,10 @@
                @method('PATCH')
                @csrf
                <div>
-                    Assignment title<input type="text" name="assigment_title" value="{{ $homework->assignment_title }}">
+                    Assignment title <br> <input type="text" name="assigment_title" value="{{ $homework->assignment_title }}">
                </div>
                <div>
-                    Url<input type="text" name="url" value="{{ $homework->url }}">
+                    Url <br> <input type="text" name="url" value="{{ $homework->url }}">
                </div>
                <div>
                     Feedback: <br>
@@ -25,7 +25,7 @@
                     Point: <br>
                     <input type="number" name="point" value="{{ $homework->point }}">
                </div>
-               <div>
+               <div> <br>
                     <input type="submit" value="Szerkesztés">
                </div>
           </form>

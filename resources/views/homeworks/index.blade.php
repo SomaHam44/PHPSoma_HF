@@ -8,6 +8,7 @@
 </head>
 <body>
     <h2>Összes házi feladat</h2>
+    <a href="{{ route('homeworks.create') }}"><button>Új házi feladat</button></a>
     <table>
         <tr>
         <th>Assignment title</th>
@@ -31,7 +32,7 @@
                 </form>
             </td>
             <td>
-                <a href="{{ route('homeworks.edit', $homework->id) }}">Szerkesztés</a>
+                <a href="{{ route('homeworks.edit', $homework->id) }}"><button>Szerkesztés</button></a>
             </td>
 
         </tr>
