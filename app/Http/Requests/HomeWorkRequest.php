@@ -24,8 +24,8 @@ class HomeWorkRequest extends FormRequest
     public function rules()
     {
         return [
-            'assignment_title' => 'required|min:4',
-            'url' => 'required|min:8',
+            'assignment_title' => 'required|min:2',
+            'url' => 'required|min:3',
             'feedback' => 'required|min:0|max:100',
             'point' => 'required|numeric|min:1|max:5',
         ];
