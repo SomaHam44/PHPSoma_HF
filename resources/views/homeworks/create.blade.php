@@ -18,19 +18,19 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div>
             Assignment title:<br>
-            <input type="text" name="assignment_title">
+            <input type="text" name="assignment_title" value="{{ old('assignment_title') }}">
         </div>
         <div>
             Url:<br>
-            <input type="text" name="url">
+            <input type="text" name="url" value="{{ old('url') }}">
         </div>
         <div>
             Feedback:<br>
-            <input type="text" name="feedback">
+            <input type="text" name="feedback" value="{{ old('feedback') }}">
         </div>
         <div>
             Point:<br>
-            <input type="number" name="point">
+            <input type="number" name="point" value="{{ old('point') }}">
         </div>
         <div> <br>
             <input type="submit" value="Create">
