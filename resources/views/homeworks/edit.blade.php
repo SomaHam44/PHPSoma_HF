@@ -7,12 +7,17 @@
      <title>Szerkesztés</title>
 </head>
 <body>
+    @if ($errors->any())
+    @foreach ($errors->all() as $error)
+    <p>{{ $error }}</p>
+    @endforeach
+    @endif
      <div>
           <form method='POST' action="{{ route('homeworks.update', $homework->id) }}">
                @method('PATCH')
                @csrf
                <div>
-                    Assignment title <br> <input type="text" name="assigment_title" value="{{ $homework->assignment_title }}">
+                    Assignment title <br> <input type="text" name="assignment_title" value="{{ $homework->assignment_title }}">
                </div>
                <div>
                     Url <br> <input type="text" name="url" value="{{ $homework->url }}">
