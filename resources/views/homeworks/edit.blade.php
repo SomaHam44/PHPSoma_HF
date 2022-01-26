@@ -18,6 +18,7 @@
                @csrf
                <div>
                     Assignment title <br> <input type="text" name="assignment_title" value="{{ $homework->assignment_title }}">
+
                </div>
                <div>
                     Url <br> <input type="text" name="url" value="{{ $homework->url }}">

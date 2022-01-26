@@ -26,7 +26,7 @@ class HomeWorkRequest extends FormRequest
         return [
             'assignment_title' => 'required|min:2',
             'url' => 'required|min:3',
-            'feedback' => 'required|min:0|max:100',
+            'feedback' => 'required|min:1|max:100',
             'point' => 'required|numeric|min:1|max:5',
         ];
 
