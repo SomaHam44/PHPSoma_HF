@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HomeWorkRequest;
 use App\Models\Homework;
 use Illuminate\Http\Request;
 
@@ -32,14 +33,9 @@ class HomeworkController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HomeWorkRequest $request)
     {
-        $validalt = $request->validate([
-            'assignment_title' => 'required|min:4',
-            'url' => 'required|min:8',
-            'feedback' => 'required|min:0|max:100',
-            'point' => 'required|numeric|min:1|max:5',
-        ]);
+
 
         $adatok = $request->only(['assignment_title', 'url', 'feedback', 'point']);
         $homework = new Homework();
@@ -47,7 +43,7 @@ class HomeworkController extends Controller
         $homework->save();
         return redirect()->route('homeworks.index');
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -71,10 +67,10 @@ class HomeworkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Homework $homework)
+    public function update(HomeWorkRequest $request, Homework $homework)
     {
         $adatok = $request->only(['assignment_title', 'url', 'feedback', 'point']);
-        $homework>fill($adatok);
+        $homework->fill($adatok);
         $homework->save();
         return redirect()->route('homeworks.index');
     }

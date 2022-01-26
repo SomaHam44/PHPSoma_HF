@@ -32,7 +32,7 @@
                 </form>
             </td>
             <td>
-                <a href="{{ route('homeworks.edit', $homework) }}"><button>Szerkesztés</button></a>
+                <a href="{{ route('homeworks.edit', $homework->id) }}"><button>Szerkesztés</button></a>
             </td>
 
         </tr>

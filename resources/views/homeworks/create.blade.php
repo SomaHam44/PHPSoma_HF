@@ -7,7 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+        <p>{{ $error }}</p>
+        @endforeach
+        @endif
     <h1>New homework</h1>
+    <a href="{{ route('homeworks.index') }}"><button>Vissza a főoldalra</button></a>
     <form method='POST' action="{{ route('homeworks.store') }}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div>
@@ -16,7 +22,7 @@
         </div>
         <div>
             Url:<br>
-            <input type="text" name="link">
+            <input type="text" name="url">
         </div>
         <div>
             Feedback:<br>
